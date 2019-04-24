@@ -12,6 +12,11 @@ import { CvComponent } from './cvTeck/cv/cv.component';
 import { ListComponent } from './cvTeck/list/list.component';
 import { ItemComponent } from './cvTeck/item/item.component';
 import { DetailComponent } from './cvTeck/detail/detail.component';
+import { StyleComponent } from './style/style.component';
+import { ExergueDirective } from './directiveAtt/exergue.directive';
+import { ImagePipePipe } from './pipe/image-pipe.pipe';
+import { TodoComponent } from './todo/todo.component';
+import { EmbaucheComponent } from './cvTeck/embauche/embauche.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { DetailComponent } from './cvTeck/detail/detail.component';
     CvComponent,
     ListComponent,
     ItemComponent,
-    DetailComponent
+    DetailComponent,
+    StyleComponent,
+    ExergueDirective,
+    ImagePipePipe,
+    TodoComponent,
+    EmbaucheComponent
   ],
   imports: [
     BrowserModule,

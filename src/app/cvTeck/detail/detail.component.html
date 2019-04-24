@@ -6,7 +6,7 @@
       </div>
       <div class="user">
 
-        <img class="img-circle" src="assets/images/{{personneDetail?.path}}">
+        <img class="img-circle" src="assets/images/{{personneDetail.path | imagePipe}}">
       </div>
       <div class="content">
         <div class="main">
@@ -48,7 +48,7 @@
               </p>
             </div>
           </div>
-
+          <button (click)="addEmbauche(personneDetail)">Embauche</button>
         </div>
       </div>
       <div class="footer">
