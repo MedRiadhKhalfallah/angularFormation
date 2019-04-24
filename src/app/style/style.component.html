@@ -1,0 +1,13 @@
+<input type="color" [(ngModel)]="styles['color']">
+<input type="number" [(ngModel)]="styles['font-size']">
+<select [(ngModel)]="styles['font-family']">
+  <option *ngFor="let pStyleItem of pStyles" >{{pStyleItem}}</option>
+</select>
+
+<p [ngStyle]="styles">
+  style works!<br>
+  {{styles.color}}<br>
+  {{styles["font-family"]}}<br>
+  {{styles["font-size"]}}<br>
+</p>
+

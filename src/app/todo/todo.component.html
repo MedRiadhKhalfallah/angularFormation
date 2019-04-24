@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-6">
+    <ol class="list-group">
+      <li class="list-group-item" *ngFor="let todo of todoListe ;let i = index">
+        {{todo.name}} {{todo.tache}}
+        <button (click)="deleteTodo(todo)"> delete todo</button>
+        <button (click)="updateTodo(todo,i)"> update todo</button>
+      </li>
+    </ol>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="name">name</label>
+      <input class="form-control" [(ngModel)]="todoAdd.name" type="text" id="name">
+
+    </div>
+    <div class="form-group">
+      <label for="tache">tache</label>
+      <input class="form-control" [(ngModel)]="todoAdd.tache" type="text" id="tache">
+
+    </div>
+    <button (click)="addTodo(todoAdd)" [disabled]="!todoAdd.name || !todoAdd.tache">Add todo</button>
+  </div>
+</div>
