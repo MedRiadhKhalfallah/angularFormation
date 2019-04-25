@@ -22,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DetailCvComponent } from './detail-cv/detail-cv.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { ObservablesComponent } from './observables/observables/observables.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     DetailCvComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    ObservablesComponent
   ],
   imports: [
     BrowserModule,
