@@ -15,6 +15,12 @@ export class EmbaucheServiceService {
   }
 
   addEmbauche(personne: Personne) {
-    this.listeEmbauche.push(personne);
+    const index = this.listeEmbauche.indexOf(personne);
+    if (index === -1) {
+      this.listeEmbauche.push(personne);
+
+    } else {
+      alert('vous deja selecctionné ce profil');
+    }
   }
 }
