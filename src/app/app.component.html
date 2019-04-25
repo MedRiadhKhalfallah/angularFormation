@@ -5,7 +5,7 @@
 <input type="color" [(ngModel)]="colorParent">
 <app-color-fis [color]="colorParent" (sendDataToDad)="alertInDad($event)"></app-color-fis>
 -->
-<app-cv></app-cv>
+<!--<app-cv></app-cv>-->
 <!--<app-style></app-style>-->
 <!--
 <p>
@@ -14,3 +14,7 @@
 <input appExergue type="text" [colorInput]="'red'" [borderColorInput]="'red'">
 -->
 <!--<app-todo></app-todo>-->
+<app-header></app-header>
+<br>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Personne} from '../../Model/personne.model';
 import {EmbaucheServiceService} from '../../service/embauche-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -10,7 +11,7 @@ import {EmbaucheServiceService} from '../../service/embauche-service.service';
 export class DetailComponent implements OnInit {
   @Input() personneDetail: Personne;
 
-  constructor(private embaucheService: EmbaucheServiceService) {
+  constructor(private embaucheService: EmbaucheServiceService, private router: Router) {
   }
 
   ngOnInit() {
@@ -18,6 +19,10 @@ export class DetailComponent implements OnInit {
 
   addEmbauche(embauche: Personne) {
     this.embaucheService.addEmbauche(embauche);
+  }
+
+  detailProfil(pers: Personne) {
+    this.router.navigate(['cv', pers.id]);
   }
 
 }

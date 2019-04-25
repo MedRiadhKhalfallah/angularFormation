@@ -17,6 +17,10 @@ import { ExergueDirective } from './directiveAtt/exergue.directive';
 import { ImagePipePipe } from './pipe/image-pipe.pipe';
 import { TodoComponent } from './todo/todo.component';
 import { EmbaucheComponent } from './cvTeck/embauche/embauche.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { DetailCvComponent } from './detail-cv/detail-cv.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { EmbaucheComponent } from './cvTeck/embauche/embauche.component';
     ExergueDirective,
     ImagePipePipe,
     TodoComponent,
-    EmbaucheComponent
+    EmbaucheComponent,
+    HeaderComponent,
+    FooterComponent,
+    DetailCvComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

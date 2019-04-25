@@ -1,0 +1,9 @@
+<div *ngIf="personneDetail!=null">
+  <div class="row">id : {{personneDetail.id}}</div>
+  <div class="row">name : {{personneDetail.name}}</div>
+  <div class="row">firstname : {{personneDetail.firstname}}</div>
+  <div class="row">age : {{personneDetail.age}}</div>
+  <div class="row">cin : {{personneDetail.cin}}</div>
+  <div class="row">image :<img src="../../assets/images/{{personneDetail.path | imagePipe}}"
+                               alt="{{personneDetail.name}}"></div>
+</div>
