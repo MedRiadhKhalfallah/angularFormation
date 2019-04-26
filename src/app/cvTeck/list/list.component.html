@@ -1,9 +1,1 @@
-<ol class="list-group">
-  <app-item
-    [personne]="personne"
-    (sendDataToList)="getPersonneFromItem($event)"
-    *ngFor="let personne of personnes"
-  ></app-item>
-</ol>
-<button (click)="goTodo()">go todo</button>
-
+<ol class="list-group">  <app-item    [personne]="personne"    (sendDataToList)="getPersonneFromItem($event)"    *ngFor="let personne of personnes"  ></app-item></ol><button (click)="goTodo()">go todo</button>

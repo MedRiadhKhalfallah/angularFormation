@@ -1,20 +1,1 @@
-import {Component, OnInit} from '@angular/core';
-import {NgForm} from '@angular/forms';
-
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
-export class LoginComponent implements OnInit {
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
-  loginFn(formulaire: NgForm) {
-console.log(formulaire);
-  }
-}
+import {Component, OnInit} from '@angular/core';import {NgForm} from '@angular/forms';import {CvServiceService} from '../service/cv-service.service';import {HttpHeaders} from '@angular/common/http';import {Router} from '@angular/router';@Component({  selector: 'app-login',  templateUrl: './login.component.html',  styleUrls: ['./login.component.css']})export class LoginComponent implements OnInit {  message = '';  constructor(private CvService: CvServiceService,              private router: Router) {  }  ngOnInit() {  }  loginFn(formulaire: NgForm) {    this.CvService.login(formulaire.value.email, formulaire.value.pwd).subscribe(      (response) => {        console.log(response, 'response');        this.message = '';        this.router.navigate(['']);        /*                const headers = new HttpHeaders();                headers.append('Authorization', 'Bearer ${response.id}');        */        localStorage.setItem('token', response.id);      },      (erreur) => {        this.message = erreur.error.error.message;        console.log(erreur, 'erreur');      }    );  }}

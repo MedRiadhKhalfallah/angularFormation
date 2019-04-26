@@ -1,11 +1,1 @@
-<div class="row">
-  <div class="col-md-4 col-sm-12">
-    <app-list (sendPersoneToCD)="getPersonneFromListe($event)"></app-list>
-  </div>
-  <div class="col-md-8 col-sm-12">
-    <app-detail *ngIf="personne" [personneDetail]="personne"></app-detail>
-  </div>
-</div>
-<div class="row">
-  <app-embauche></app-embauche>
-</div>
+<div class="row">  <div class="col-md-4 col-sm-12">    <app-list (sendPersoneToCD)="getPersonneFromListe($event)"></app-list>  </div>  <div class="col-md-8 col-sm-12">    <app-detail *ngIf="personne" [personneDetail]="personne"></app-detail>  </div></div><div class="row">  <app-embauche></app-embauche></div>

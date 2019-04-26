@@ -1,22 +1,1 @@
-import {Injectable} from '@angular/core';
-import {Personne} from '../Model/personne.model';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class CvServiceService {
-  personneData: Personne[];
-
-  constructor() {
-    this.personneData = [
-      new Personne(1, 'KHALFALLAH', 'Med Riadh', 'ING', 'riadh.png', 123456879, 26),
-      new Personne(2, 'KH', 'Riadh', 'ETU', '', 123456789, 26)
-    ];
-  }
-
-  getData() {
-    return this.personneData;
-  }
-  finPersById(id) {
-    return this.personneData.find(pers => pers.id === Number(id));  }
-}
+import {Injectable} from '@angular/core';import {Personne} from '../Model/personne.model';import {HttpClient} from '@angular/common/http';import {ObservablesComponent} from '../observables/observables/observables.component';import {Observable} from 'rxjs';@Injectable({  providedIn: 'root'})export class CvServiceService {  personneData: Personne[];  observableGetPesonne;  constructor(private http: HttpClient) {    /*        this.personneData = [          new Personne(1, 'KHALFALLAH', 'Med Riadh', 'ING', 'riadh.png', 123456879, 26),          new Personne(2, 'KH', 'Riadh', 'ETU', '', 123456789, 26)        ];    */  }  getData(): Observable<Personne[]> {    return this.http.get<Personne[]>('http://localhost:3000/api/personnes');  }  login(email1,password1) {    let req = {      email: email1,      password: password1    };    return this.http.post('http://localhost:3000/api/Users/login', req);  }  getFakeData() {    return this.personneData;  }  finPersById(id) {    return this.personneData.find(pers => pers.id === Number(id));  }}
